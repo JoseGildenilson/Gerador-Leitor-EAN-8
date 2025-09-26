@@ -1,4 +1,3 @@
-//declaração das funções.
 #ifndef COMANDO_H
 #define COMANDO_H
 #include <stdio.h>
@@ -22,4 +21,5 @@ int existe(char *nome);
 void head();
 
 void loading();
+
 #endif 
