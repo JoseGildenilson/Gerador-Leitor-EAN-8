@@ -12,8 +12,7 @@ int main() {
     printf("Digite o nome do arquivo PBM (sem caminho): ");
     scanf("%s", nomeArquivo);
 
-    // Adiciona caminho da pasta CodigoGerado
-    // Se o usuário não digitou .pbm, adiciona
+
     if (strstr(nomeArquivo, ".pbm") == NULL) {
         snprintf(caminhoCompleto, sizeof(caminhoCompleto),
                  "../GerarCodigoDeBarras/CodigoGerado/%s.pbm", nomeArquivo);
@@ -22,7 +21,6 @@ int main() {
                  "../GerarCodigoDeBarras/CodigoGerado/%s", nomeArquivo);
     }
 
-    // Verifica se o arquivo existe
     FILE *f = fopen(caminhoCompleto, "r");
     if (!f) {
         printf("Arquivo '%s' não encontrado em CodigoGerado.\n", nomeArquivo);
