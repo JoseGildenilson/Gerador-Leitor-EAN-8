@@ -59,7 +59,7 @@ int bitsParaDecimal(int *bits, int tamanho) {
     return valor;
 }
 
-// ****** FUNÇÃO CORRIGIDA ******
+
 void extrairIdentificador() {
     int bordaSuperior = 0, bordaLateral = 0, encontrou = 0;
 
@@ -101,10 +101,8 @@ void extrairIdentificador() {
 
     printf("Identificador do código de barras: ");
 
-    // Posição inicial após a guarda inicial (3 módulos)
     int offset = bordaLateral + (3 * larguraModulo);
 
-    // Dígitos da esquerda
     for (int digito = 0; digito < 4; digito++) {
         int bits[7];
         for (int b = 0; b < 7; b++) {
@@ -119,11 +117,8 @@ void extrairIdentificador() {
             }
         }
     }
-
-    // Pular para a seção da direita (após os 4 dígitos da esquerda e a guarda central de 5 módulos)
     offset += (28 * larguraModulo) + (5 * larguraModulo);
 
-    // Dígitos da direita
     for (int digito = 0; digito < 4; digito++) {
         int bits[7];
         for (int b = 0; b < 7; b++) {
